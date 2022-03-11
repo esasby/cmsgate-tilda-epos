@@ -1,0 +1,37 @@
+{
+  "name": "esas/cmsgate-tilda-eposh",
+  "description": "Epos payment gateway integration for Tilda",
+  "keywords": [
+    "cmsgate",
+    "esas",
+    "payment gateway",
+    "tilda",
+    "epos",
+    "erip",
+    "api"
+  ],
+  "require": {
+    "php": ">= 5.6.0",
+    "esas/cmsgate-epos-lib": "~v1.17.0",
+    "esas/cmsgate-tilda-lib": "~v1.17.2",
+    "esas/cmsgate-core": "~v1.17.3",
+    "esas/cmsgate-cloud-lib": "~v1.17.4",
+    "ext-pdo": "*"
+  },
+  "authors": [
+    {
+      "name": "esas",
+      "email": "support@epos.by",
+      "homepage": "https://e-pos.by"
+    }
+  ],
+  "config": {
+    "vendor-dir": "src/cmsgate-tilda-epos/vendor"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Esas\\Epos\\": ""
+    }
+  }
+}
