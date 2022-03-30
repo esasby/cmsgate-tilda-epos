@@ -12,10 +12,10 @@
   ],
   "require": {
     "php": ">= 5.6.0",
-    "esas/cmsgate-epos-lib": "~v1.17.0",
+    "esas/cmsgate-epos-lib": "~v1.17.2",
     "esas/cmsgate-tilda-lib": "~v1.17.2",
     "esas/cmsgate-core": "~v1.17.3",
-    "esas/cmsgate-cloud-lib": "~v1.17.4",
+    "esas/cmsgate-cloud-lib": "~v1.17.5",
     "ext-pdo": "*"
   },
   "authors": [

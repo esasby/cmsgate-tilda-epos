@@ -8,6 +8,7 @@
 
 namespace esas\cmsgate\epos;
 
+use esas\cmsgate\CmsConnectorTilda;
 use esas\cmsgate\descriptors\ModuleDescriptor;
 use esas\cmsgate\descriptors\VendorDescriptor;
 use esas\cmsgate\descriptors\VersionDescriptor;
@@ -16,7 +17,6 @@ use esas\cmsgate\epos\view\client\CompletionPanelEposTilda;
 use esas\cmsgate\tilda\RequestParamsTilda;
 use esas\cmsgate\utils\CloudSessionUtils;
 use esas\cmsgate\utils\CMSGateException;
-use esas\cmsgate\utils\SessionUtils;
 use esas\cmsgate\utils\URLUtils;
 use esas\cmsgate\view\admin\AdminViewFields;
 use esas\cmsgate\view\admin\ConfigFormCloud;
@@ -26,7 +26,7 @@ class RegistryEposTilda extends RegistryEpos
 {
     public function __construct()
     {
-        $this->cmsConnector = new CmsConnectorTildaEpos();
+        $this->cmsConnector = new CmsConnectorTilda();
         $this->paysystemConnector = new PaysystemConnectorEpos();
     }
 
@@ -80,7 +80,7 @@ class RegistryEposTilda extends RegistryEpos
     {
         return new ModuleDescriptor(
             "commerce-tilda-epos", // код должен совпадать с кодом решения в маркете (@id в Plugin\Commerce\PaymentGateway\xxx.php)
-            new VersionDescriptor("1.17.0", "2022-02-09"),
+            new VersionDescriptor("1.17.1", "2022-03-28"),
             "Tilda EPOS",
             "https://bitbucket.org/esasby/cmsgate-tilda-epos/src/master/",
             VendorDescriptor::esas(),
