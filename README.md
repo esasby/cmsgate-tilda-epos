@@ -5,8 +5,8 @@
 
 ## Инструкция по настройке платежной системы в интернет-магазине
 1. Зайдите в личный кабинет для настройки интеграции. Для входа необходимо использовать авторизационные данные системы EPOS
-    * [для боевого режима работы](https://cmsgate.esas.by/cmsgate-tilda-hutkigrosh/config/login)
-    * [для тестового режима работы](https://test-cmsgate.esas.by/cmsgate-tilda-hutkigrosh/config/login)
+    * [для боевого режима работы](https://cmsgate.esas.by/cmsgate-tilda-epos/config/login)
+    * [для тестового режима работы](https://test-cmsgate.esas.by/cmsgate-tilda-epos/config/login)
     
     1. Укажите обязательные параметры
         * EPOS процессинг - выбор организации, выполняющей интеграцию с EPOS
