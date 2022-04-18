@@ -5,6 +5,7 @@ namespace esas\cmsgate\epos;
 
 
 use esas\cmsgate\CloudRegistryPDO;
+use esas\cmsgate\epos\view\admin\AdminLoginPageEposTilda;
 use esas\cmsgate\security\ApiAuthServiceTilda;
 use esas\cmsgate\security\CryptServiceImpl;
 use esas\cmsgate\tilda\RequestParamsTilda;
@@ -42,7 +43,7 @@ class CloudRegistryEposTilda extends CloudRegistryPDO
 
     public function createAdminLoginPage()
     {
-        return new AdminLoginPage();
+        return new AdminLoginPageEposTilda();
     }
 
     public function isSandbox()
