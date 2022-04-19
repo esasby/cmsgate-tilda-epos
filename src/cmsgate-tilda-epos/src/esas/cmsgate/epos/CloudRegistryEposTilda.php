@@ -1,8 +1,5 @@
 <?php
-
-
 namespace esas\cmsgate\epos;
-
 
 use esas\cmsgate\CloudRegistryPDO;
 use esas\cmsgate\epos\view\admin\AdminLoginPageEposTilda;
@@ -10,12 +7,19 @@ use esas\cmsgate\security\ApiAuthServiceTilda;
 use esas\cmsgate\security\CryptServiceImpl;
 use esas\cmsgate\tilda\RequestParamsTilda;
 use esas\cmsgate\view\admin\AdminConfigPage;
-use esas\cmsgate\view\admin\AdminLoginPage;
 use esas\cmsgate\security\AuthConfigMapper;
 use PDO;
 
 class CloudRegistryEposTilda extends CloudRegistryPDO
 {
+    private $config;
+
+    public function __construct()
+    {
+        define('read_config', true);
+        $this->config = require (dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
+    }
+
     public function getPDO()
     {
         $opt = [
@@ -24,9 +28,9 @@ class CloudRegistryEposTilda extends CloudRegistryPDO
             PDO::ATTR_EMULATE_PREPARES => false,
         ];
         return new PDO(
-            "mysql:host=127.0.0.1;dbname=cmsgate;charset=utf8",
-            'username',
-            'password',
+            $this->config[CONFIG_PDO_DSN],
+            $this->config[CONFIG_PDO_USERNAME],
+            $this->config[CONFIG_PDO_PASSWORD],
             $opt);
     }
 
@@ -48,7 +52,7 @@ class CloudRegistryEposTilda extends CloudRegistryPDO
 
     public function isSandbox()
     {
-        return true;
+        return $this->config[CONFIG_SANDBOX];
     }
 
     protected function createCryptService()
