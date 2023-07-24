@@ -1,14 +1,15 @@
 <?php
 
 
-namespace esas\cmsgate\epos;
+namespace esas\cmsgate\tilda;
 
 
-use esas\cmsgate\CloudRegistry;
-use esas\cmsgate\controller\ControllerTildaNotify;
+use esas\cmsgate\bridge\service\OrderService;
+use esas\cmsgate\epos\HooksEpos;
 use esas\cmsgate\epos\protocol\EposCallbackRq;
 use esas\cmsgate\epos\protocol\EposInvoiceGetRs;
 use esas\cmsgate\Registry;
+use esas\cmsgate\tilda\controllers\ControllerTildaNotify;
 use esas\cmsgate\wrappers\OrderWrapper;
 
 class HooksEposTilda extends HooksEpos
@@ -16,7 +17,7 @@ class HooksEposTilda extends HooksEpos
     public function onCallbackRqRead(EposCallbackRq $rq)
     {
         parent::onCallbackRqRead($rq);
-        CloudRegistry::getRegistry()->getOrderCacheService()->loadSessionOrderCacheByExtId($rq->getInvoiceId());
+        OrderService::fromRegistry()->loadSessionOrderByExtId($rq->getInvoiceId());
     }
 
     public function onCallbackStatusPayed(OrderWrapper $orderWrapper, EposInvoiceGetRs $resp)

@@ -1,0 +1,20 @@
+#element-section-header {
+    background: #999966;
+    color: white;
+    /*background: red;*/
+}
+
+#element-header-end-column  a:link {
+    color: white;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #999966;
+    border-color: #999966;
+}
+
+.btn-outline-success {
+    color: #999966;
+    border-color: #999966;
+}
