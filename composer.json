@@ -12,8 +12,8 @@
   ],
   "require": {
     "php": ">= 5.6.0",
-    "esas/cmsgate-epos-lib": "~v2.2.0",
-    "esas/cmsgate-tilda-lib": "~v2.0.1",
+    "esas/cmsgate-epos-lib": "~v2.2.2",
+    "esas/cmsgate-tilda-lib": "~v2.0.2",
     "esas/cmsgate-core": "~v2.2.7",
     "ext-pdo": "*"
   },
