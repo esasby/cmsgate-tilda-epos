@@ -18,7 +18,7 @@ use esas\cmsgate\utils\Logger as LoggerCms;
 
 require_once((dirname(__FILE__)) . '/src/init.php');
 
-$request = $_SERVER['REDIRECT_URL'];
+$request = &$_SERVER['REDIRECT_URL'];
 const PATH_INVOICE_ADD = '/api/invoice/add';
 const PATH_INVOICE_VIEW = '/api/invoice/view';
 const PATH_INVOICE_CALLBACK = '/api/invoice/callback';

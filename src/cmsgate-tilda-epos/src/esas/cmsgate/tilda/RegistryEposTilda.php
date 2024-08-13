@@ -32,7 +32,6 @@ use esas\cmsgate\tilda\service\ServiceProviderTilda;
 use esas\cmsgate\utils\CMSGateException;
 use esas\cmsgate\utils\URLUtils;
 use esas\cmsgate\view\admin\AdminViewFields;
-use Exception;
 
 class RegistryEposTilda extends RegistryEpos
 {
@@ -60,9 +59,6 @@ class RegistryEposTilda extends RegistryEpos
         return parent::getRegistry();
     }
 
-    /**
-     * @throws \Exception
-     */
     public function createConfigForm() {
         $managedFields = $this->getManagedFieldsFactory()->getManagedFieldsOnly(AdminViewFields::CONFIG_FORM_COMMON, [
             ConfigFieldsEpos::eposProcessor(),
