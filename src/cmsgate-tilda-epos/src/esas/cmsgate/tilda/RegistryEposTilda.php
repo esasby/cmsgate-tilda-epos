@@ -93,7 +93,7 @@ class RegistryEposTilda extends RegistryEpos
     public function createModuleDescriptor() {
         return new ModuleDescriptor(
             "commerce-tilda-epos", // код должен совпадать с кодом решения в маркете (@id в Plugin\Commerce\PaymentGateway\xxx.php)
-            new VersionDescriptor("2.0.0", "2023-07-24"),
+            new VersionDescriptor("2.0.1", "2024-10-18"),
             "Tilda EPOS",
             "https://github.com/esasby/cmsgate-tilda-epos",
             VendorDescriptor::esas(),
